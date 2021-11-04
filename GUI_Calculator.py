@@ -1,9 +1,10 @@
 import tkinter as tk
 
+
 class Calculator(tk.Frame):
     def __init__(self, master=None):
         super().__init__(master)
-        self.master.geometry("300x650")
+        self.master.geometry("300x800")
         self.master.title("GUI Calculator")
         self.pack()
 
@@ -34,6 +35,9 @@ class Calculator(tk.Frame):
             buttono = tk.Button(text=operations[i], fg="Black", bg="Black", command=callback1)
             buttono.pack()
             self.ops.append(buttono)
+
+        calc_button = tk.Button(text="Calculate", fg="Blue", bg="White", command=self.calculation)
+        calc_button.pack()
 
         self.output = tk.Text(self.master)
         self.output.insert(1.0, "Output: \n")
